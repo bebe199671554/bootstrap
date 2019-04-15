@@ -1,0 +1,4 @@
+{
+    "appService.deploySubpath": "BSHTMLCLASS\\show-slave",
+    "appService.defaultWebAppToDeploy": "/subscriptions/8e9877d1-aba4-4078-9a35-5719b0e76b6f/resourceGroups/Buildschool2019/providers/Microsoft.Web/sites/kuruma"
+}
