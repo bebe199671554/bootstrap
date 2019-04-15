@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+
+
+        <div class="custom-control custom-radio">
+            <input type="radio" id="convert-c" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="convert-c">攝氏轉為華氏</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input type="radio" id="convert-f" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="convert-f"> 華氏轉為攝氏</label>
+        </div>
+
+        </br>
+        <div id="buttons ">
+            <div class="row">
+                <div class="col-md-4"><a class="btn btn-outline-secondary btn-block input-pad" href="#" role="button" value="1">1</a></div>
+                <div class="col-md-4"><a class="btn btn-outline-secondary btn-block input-pad" href="#" role="button" value="2">2</a></div>
+                <div class="col-md-4"><a class="btn btn-outline-secondary btn-block input-pad" href="#" role="button" value="3">3</a></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"><a class="btn btn-outline-secondary btn-block input-pad" href="#" role="button" value="4">4</a></div>
+                <div class="col-md-4"><a class="btn btn-outline-secondary btn-block input-pad" href="#" role="button" value="5">5</a></div>
+                <div class="col-md-4"><a class="btn btn-outline-secondary btn-block input-pad" href="#" role="button" value="6">6</a></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"><a class="btn btn-outline-secondary btn-block input-pad" href="#" role="button" value="7">7</a></div>
+                <div class="col-md-4"><a class="btn btn-outline-secondary btn-block input-pad" href="#" role="button" value="8">8</a></div>
+                <div class="col-md-4"><a class="btn btn-outline-secondary btn-block input-pad" href="#" role="button" value="9">9</a></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"><a class="btn btn-outline-secondary btn-block input-pad" href="#" role="button" value="0">0</a></div>
+                <div class="col-md-4"><a class="btn btn-outline-secondary btn-block input-pad " href="#" role="button" value="1">.</a></div>
+            </div>
+        </div>
+        </br>
+        <div class="input-group">
+            <input type="text" class="form-control text-right" placeholder="0" aria-label="0" id="input">
+            <div class="input-group-append" id="inpubt">
+                <button class="btn btn-outline-secondary" type="button" name="convert" id="convert" onclick="doCalc()">轉換</button>
+                <button class="btn btn-outline-secondary" type="button" name="clear" id="clear" onclick="doClear()">清除</button>
+            </div>
+        </div>
+        <!-- <input type="text" name="input" id="input" value="0" />
+        <button type="button" class="btn" name="convert" id="convert">轉換</button>
+        <button type="button" class="btn" name="clear" id="clear">清除</button> -->
+        </br>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text " id="basic-addon3">結果</span>
+            </div>
+            <input type="text" class="form-control text-right" id="result" placeholder="0" aria-describedby="basic-addon3" readonly>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+        function doCalc() {
+            var input = document.getElementById("input");
+            var result = document.getElementById("result");
+
+            if (document.getElementById("convert-c").checked == true) {
+                var r = (input.value * 1.8) + 32;
+                result.value = r;
+            } else {
+                var r = (input.value - 32) * 5 / 9;
+                result.value = r;
+
+            }
+            document.getElementsByClassName("input-pad").disabled = true;
+        }
+
+        function stop() {
+            if (this.value == 1) {
+                this.value = 0;
+
+
+
+            } else {}
+        }
+
+        function doBtn() {
+            var input = document.getElementById("input");
+            var text = this.innerHTML;
+            input.value += text;
+            result.value = "";
+        }
+        var doBtns = document.getElementsByClassName("input-pad");
+        for (var i = 0; i < doBtns.length; i++) {
+            doBtns[i].onclick = doBtn;
+        }
+
+        function doClear() {
+            input.value = "";
+            result.value = "";
+
+            document.getElementsByClassName("stop").disabled = true;
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js " integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js " integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy " crossorigin="anonymous "></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,306 @@
+@import "normalize";
+html {
+    font-size: 16px;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: "Segoe UI", "微軟正黑體", sans-serif;
+    font-weight: bold;
+    line-height: 1.4;
+    color: #555;
+    max-width: 1080px;
+}
+
+img {
+    max-width: 100%;
+}
+
+%restar {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+%flexabout {
+    display: flex;
+    justify-content: flex-end;
+}
+
+%flexabout2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+%block1 {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+@mixin photo($url, $width, $height) {
+    width: $width;
+    height: $height;
+    background: url($url) no-repeat;
+    background-size: 100% 100%;
+    text-indent: 110%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+a {
+    color: #009ced;
+    text-decoration: none;
+    &:hover {
+        color: #0081c3;
+        text-decoration: underline;
+    }
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.webtop-in {
+    margin: 0;
+    padding: 0;
+    p {
+        display: none;
+    }
+    width: 100%;
+    height: 100%;
+}
+
+.newsitem {
+    margin: 0;
+    padding: 0;
+    display: block;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    // display: flex;
+    // align-items: center;
+}
+
+.topbox {
+    margin: 20px 0;
+    padding: 0;
+    text-align: center;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    // align-items: center;
+    // align-items: baseline;
+    // justify-content: space-between;
+    button {
+        display: none;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+    }
+    .listbyshop {
+        justify-content: flex-start;
+    }
+    h2 {
+        .titleshop {
+            justify-content: center;
+            text-align: center;
+            color: #000;
+        }
+    }
+    .wins {
+        a {
+            @extend %block1;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            color: #000;
+        }
+        // left:20px;
+    }
+    .shopbox {
+        text-align: center;
+        justify-content: end;
+        a {
+            @extend %block1;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            color: #000;
+        }
+    }
+    a {
+        @extend %block1;
+        width: 100px;
+        height: 36px;
+        line-height: 36px;
+        color: #000;
+    }
+    li {
+        display: flex;
+        flex-basis: auto;
+        justify-content: space-between;
+        // &::hover {
+        //     $word: #fff;
+        //     transition-property: background;
+        //     transition-duration: 0.3s;
+        //     background: darken($word, 10);
+        // }
+    }
+    height: 60px;
+    line-height: 60px;
+}
+
+.index-image {
+    height: 550px;
+    background: url(../images/girlshopping-1024x683.jpg) center center no-repeat;
+    background-size: cover;
+    .container {
+        position: relative;
+        height: 100%;
+    }
+    h2 {
+        font-size: 50px;
+        font-weight: normal;
+        color: rgba(255, 255, 255, 1);
+        text-shadow: rgba( #000000, $alpha: 0.8)0 0 5px;
+        position: absolute;
+        margin: 0 0 0 30px;
+        left: 20px;
+        top: 100px;
+    }
+    span {
+        display: block;
+        position: relative;
+        left: 2em;
+    }
+}
+
+.textaboutshop {
+    padding: 20px 0;
+    background-color: #979797;
+    color: #fff;
+    p {
+        font-weight: normal;
+    }
+}
+
+.commodity-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    // justify-content: space-around;
+    a {
+        text-decoration: none;
+    }
+    list-style: none;
+    ul {
+        list-style: none;
+    }
+}
+
+.commodity {
+    padding: 20px;
+    color: #000000;
+    h4 {
+        margin: 0;
+    }
+    // line-height: 0.5 em;
+    .cash {
+        font-weight: normal;
+    }
+}
+
+.webbottom-in {
+    width: 100%;
+    height: 100%;
+}
+
+.mail {
+    padding: 20px 0;
+    i {
+        right: 20px;
+    }
+}
+
+.mailtext {
+    padding-left: 20px;
+    // padding：0 10px 0 0;
+    border-style: none;
+    width: 60%;
+    height: 36px;
+    line-height: 36px;
+    border-bottom-style: solid;
+    border-color: rgb(184, 184, 184);
+    margin: 20px;
+}
+
+// .mail-line {
+//     margin: 10px 0;
+//     width: 60%;
+//     border-bottom-style: solid;
+//     border-color: rgb(184, 184, 184);
+// }
+.mailgo {
+    top: 20px;
+    width: 60%;
+    height: 36px;
+    line-height: 36px;
+    background-color: #000000;
+    color: #fff;
+}
+
+.bottomitem {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #383838;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    &:nth-child(3) {
+        flex-grow: 6;
+    }
+    ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+    }
+    li {
+        // flex: 1 0 28px;
+        width: 100px;
+        text-align: center;
+    }
+    a {
+        @extend %block1;
+        line-height: 38px;
+        color: #fff;
+        &:hover {
+            // background-color: #ff9204;
+            $blue: #000000;
+            transition-property: background;
+            transition-duration: 0.3s;
+            background: darken($blue, 0);
+            color: #fff;
+        }
+    }
+}
+
+.fromBS {
+    height: 40px;
+    line-height: 40px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #9c9c9c;
+    color: #000000;
+    font-weight: normal;
+}
+
+// @import "stylestop";
+// @import "stylesbottom";

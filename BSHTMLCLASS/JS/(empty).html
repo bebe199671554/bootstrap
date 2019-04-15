@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <!-- <style>
+        strong {
+            color: blue;
+        }
+    </style> -->
+</head>
+
+<body>
+    計算結果為：
+    <div id="a">
+        <button id="show">顯示</button>
+    </div>
+
+    <pre><script>
+
+// var a=1;
+// var b=2;
+// document.writeln(a+b);
+// var userInput =prompt("請輸入數值",123);
+// document.writeln(userInput);
+// document.writeln("攝氏"+tempc+"度,等於華氏"+tempf+"度");
+document.getElementById("show").onclick=dox;
+function dox(){
+
+ 
+var tempc= prompt("請輸入攝氏溫度");
+var tempf=(tempc*1.8)+32;
+
+var text ="攝氏"+tempc+"度,等於華氏"+tempf+"度";
+var strong = document.createElement("strong");
+strong.innerHTML=text;
+document.getElementById("a").appendChild(strong); 
+}
+</script></pre>
+
+</body>
+
+</html>
